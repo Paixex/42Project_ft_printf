@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: digil-pa <digil-pa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 20:25:30 by digil-pa          #+#    #+#             */
-/*   Updated: 2022/12/08 15:49:09 by digil-pa         ###   ########.fr       */
+/*   Created: 2022/12/08 13:33:38 by digil-pa          #+#    #+#             */
+/*   Updated: 2022/12/08 14:59:01 by digil-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+void	ft_putnbr_len(int n, int *len)
 {
-	int	i;
+	int	nbr;
 
-	i = 0;
-	if (!s)
+	nbr = n;
+	if (nbr == -2147483648)
 	{
-		write(1, "(null)", 6);
-		return (5);
+		ft_putstr("-2147483648", len);
+		return ;
 	}
-	while(s[i])
+	if (nbr < 0)
 	{
-		write(1, &s[i], 1);
-		i++;
+		ft_putchar_len('-', len);
+		ft_putnbr_len(nbr * -1, len);
 	}
-	return (i - 1);
+	else
+	{
+		if (nbr > 9)
+			ft_putnbr_len(nbr / 10, len);
+		ft_putchar_len(nbr % 10 + '0', len);
+	}
 }

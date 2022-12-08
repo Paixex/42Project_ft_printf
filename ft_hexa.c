@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: digil-pa <digil-pa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 20:25:30 by digil-pa          #+#    #+#             */
-/*   Updated: 2022/12/08 15:49:09 by digil-pa         ###   ########.fr       */
+/*   Created: 2022/12/08 11:36:56 by digil-pa          #+#    #+#             */
+/*   Updated: 2022/12/08 15:16:09 by digil-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+void	ft_hexa(unsigned long int k, const char *c)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
-	{
-		write(1, "(null)", 6);
-		return (5);
-	}
-	while(s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i - 1);
+	int	size;
+	
+	size = 0;
+	if (c >= 16)
+		size += ft_hexa(k /16, c);
+	size += ft_putchar_len(c[k % 16]);
+	return (size);
 }

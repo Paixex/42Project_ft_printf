@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_unsignednbr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: digil-pa <digil-pa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 20:25:30 by digil-pa          #+#    #+#             */
-/*   Updated: 2022/12/08 15:49:09 by digil-pa         ###   ########.fr       */
+/*   Created: 2022/12/08 15:27:07 by digil-pa          #+#    #+#             */
+/*   Updated: 2022/12/08 15:29:14 by digil-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+void	ft_unsignednbr(unsigned int k, int *len)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
-	{
-		write(1, "(null)", 6);
-		return (5);
-	}
-	while(s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i - 1);
+	if (k > 9)
+		ft_unsignednbr(k / 10, len);
+	ft_putchar_len(k % 10 +'0', len);
 }

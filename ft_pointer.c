@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: digil-pa <digil-pa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 20:11:42 by digil-pa          #+#    #+#             */
-/*   Updated: 2022/11/23 20:14:12 by digil-pa         ###   ########.fr       */
+/*   Created: 2022/12/08 10:32:43 by digil-pa          #+#    #+#             */
+/*   Updated: 2022/12/08 15:25:37 by digil-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_pointer(size_t k, int *len)
 {
-	write(1, &c, 1);
+	if (k == 0)
+	{
+		ft_putstr("(nil)", len);
+		return ;
+	}
+	ft_putstr("0x", len);
+	ft_hexa(k, len, 'x');
 }
