@@ -6,7 +6,7 @@
 /*   By: digil-pa <digil-pa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 10:40:42 by digil-pa          #+#    #+#             */
-/*   Updated: 2022/12/22 13:55:39 by digil-pa         ###   ########.fr       */
+/*   Updated: 2022/12/22 15:38:32 by digil-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 # include <unistd.h>
 # include <stdio.h>
 /*--------------------------------------------------------*/
-typedef struct s_data
-{
-	int	count;
-}		t_data;
 
 //Prototypes
 
