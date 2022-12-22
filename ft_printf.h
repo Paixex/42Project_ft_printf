@@ -6,7 +6,7 @@
 /*   By: digil-pa <digil-pa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 10:40:42 by digil-pa          #+#    #+#             */
-/*   Updated: 2022/12/22 11:41:38 by digil-pa         ###   ########.fr       */
+/*   Updated: 2022/12/22 13:55:39 by digil-pa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ typedef struct s_data
 
 //Prototypes
 
-void	ft_hexa(unsigned long int k, const char *c);
+void	ft_hexa(unsigned long int k, const char x_or_x, int *len);
 void	ft_pointer(size_t k, int *len);
 void	ft_putchar_len(char c, int *len);
-void	ft_putnbr_len(unsigned int k, int *len);
+void	ft_putnbr_len(int n, int *len);
 void	ft_unsignednbr(unsigned int k, int *len);
-void	ft_putstr(char *s);
+void	ft_putstr(char *s, int *len);
 int		ft_printf(const char *format, ...);
 
 #endif
